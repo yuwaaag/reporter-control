@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+const p = new URLSearchParams(location.search);
+const reporter = p.get("reporter");
+
+if (reporter) {
+  setInterval(() => {
+    navigator.sendBeacon(
+      "https://script.google.com/macros/s/AKfycbzI8iP96W_vXUkAt2q3aVV3eKIUi3hOsdqwSNZ2nDrSZXRHzpF-SA3ab6WBiPEQxVxLpw/exec" + reporter
+    );
+  }, 10000);
+}
+</script>
+</body>
+</html>
